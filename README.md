@@ -89,6 +89,8 @@ add(4,5);
 console.log("Bye!!!");
 ```
 
+Java Threads:
+```
 class TimerThread extends Thread {
     public TimerThread(int interval, Method m) {
         ...
@@ -113,3 +115,4 @@ class EventLoopThread extends Thread {
         } 
     }
 }
+```
