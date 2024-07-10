@@ -254,6 +254,10 @@ Popular HOF: --> Code re-usability
 ```
 =====
 
+Closure --> functions which return a function
+
+
+
 
 
 
