@@ -257,8 +257,106 @@ Popular HOF: --> Code re-usability
 Closure --> functions which return a function
 
 
+ES 2015 / ES 6 version or ECMAScript 6 features:
+
+1) let and const for block scope
+
+const PI = 3.1459;
+
+if(x > y) {
+    let c = 100; // block scope, not hoisted to function scope
+}
+
+IIFE --> Immeditely Invoke Function Expression
+
+(function doTask() {
+
+})();
+
+```
+if(x > y) {
+    let _ref = (function () {
+        var c = 100;
+        return {
+            c: c
+        }
+    })();
+    
+    console.log(_ref.c);
+}
+```
+
+https://caniuse.com/
 
 
+2) arrow functions ==> lambda expression
+```
+let add = (x,y) => {
+    return x + y;
+}
+
+or
+
+let add = (x,y) => x + y;
+add(4,5);
+```
+
+3) Destructuring
+3.1) object
+let product = { "name": "iPhone 15", "price": 98000.00, "category": "mobile" };
+
+console.log(product.name, product.price);
+
+let {name, price} = product;
+
+console.log(name, price);
+
+3.2) arrays
+
+let colors = ["red", "green", "blue", "orange", "purple"];
+
+console.log(colors[0]); 
+
+let [r, g, ...others] = colors;
+
+console.log(r); //red
+console.log(others); // ["blue", "orange", "purple"]
+
+4) Spread, Rest operators ...
+4.1) clone
+```
+let data = [5,1,3];
+
+let ref = data; // reference --> pointer
+
+ref[0] = 999;
+
+data[0] will also be 999
+
+let clone = [...data]; // clone
+clone[1] = 9;
+data[1] --> 1
+```
+
+4.2) add
+```
+var products = [
+            { "name": "iPhone 15", "price": 98000.00, "category": "mobile" },
+            { "name": "Samsung Tv", "price": 278000.00, "category": "tv" },
+            { "name": "Wacom", "price": 45000.00, "category": "computer" },
+            { "name": "Logitech Mouse", "price": 800.00, "category": "computer" },
+            { "name": "OnePlus 15", "price": 120000.00, "category": "mobile" }
+        ]
+
+let elems = [...products, {"name": "A", "price" : 100}];
 
 
+```
+Synchronous code:
+let result = doTask(); // blocked
+5) Promise for asynchrouns task
 
+Promise callback hell:
+
+
+6) Async and Await
