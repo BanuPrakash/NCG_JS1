@@ -35,7 +35,22 @@
 
         forEach(evens, console.log);
 
+        console.log("**********");
 
+        var toDiv = function(product) {
+           return  `<div class='card'>
+                <h1 class='card-header'> ${product.name} </h1>
+                <span> ${product.price} </span>
+            </div>`
+        }
+
+        var cards = map(products, toDiv);
+
+        forEach(cards, console.log);
+
+        var names = map(products, function(p) { return p.name});
+
+        forEach(names, console.log);
     </script>
 </body>
 

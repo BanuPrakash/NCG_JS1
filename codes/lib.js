@@ -5,7 +5,7 @@ function forEach(elems, action) {
     }
 }
 
-// OCP
+// OCP to get subset
 function filter(elems, predicate) {
     var result = [];
     forEach(elems, function(elem) {
@@ -16,6 +16,11 @@ function filter(elems, predicate) {
     return result;
 }
 
+// to transform
 function map(elems, transformFn) {
-
+    var result = [];
+    forEach(elems, function(elem) {
+            result.push(transformFn(elem));
+    })
+    return result;
 }
