@@ -116,3 +116,140 @@ class EventLoopThread extends Thread {
     }
 }
 ```
+
+Code for JSV9000:
+
+```
+console.log("Hello");
+
+setTimeout(function one() {
+    console.log("1");
+}, 0);
+
+setTimeout(function two() {
+    console.log("2");
+}, 0);
+
+Promise.resolve().then(function p1() {
+    console.log("p1");
+});
+
+Promise.resolve().then(function p2() {
+    console.log("p2");
+});
+
+
+console.log("Bye");
+``
+
+OOP with JavaScript
+```
+1) var object = {} // JSON
+
+2) var rect = new Object();
+rect.x = 10;
+rect.y= 15;
+rect.area = function() {
+    return this.x * this.y;
+}
+
+3) function constructor and class owned instance method
+
+function Book(title, price) {
+    this.title = title;
+    this.price = price;
+}
+
+// instance methods
+
+Book.prototype.setTitle(t) {
+    this.title = t;
+}
+
+Book.prototype.setPrice(p) {
+    this.price = p;
+}
+// static function
+Book.equals = function(b1, b2) {
+    if(b1.title === b2.title) {
+        return true;
+    }
+    return false;
+}
+
+var jsBook = new Book("JS in Action", 560.21);
+
+4) function constructor and object owned instance method [avoid this]
+function Book(title, price) {
+    this.title = title;
+    this.price = price;
+
+    this.setTitle = function(t) {
+        this.title = t;
+    }
+
+    this.getPrice = function() {
+        return this.price;
+    }
+}
+
+Addyosmani
+
+JSON with state and behaviour // avoid
+var object  = {
+    "age": 10,
+    "name": "React Prog",
+    getName: function() {
+        return this.name;
+    }
+}
+
+object.getName();
+
+var ref = object.getName; // context is lost
+
+ref(); // window.name
+
+var ref2 = object.getName.bind(object);
+ref2();
+
+========
+
+function update(name) {
+    this.name = name;
+}
+
+var book = {
+    "name": "JS Unleashed",
+    "price" 1234
+}
+
+var employee = {
+    "name": "Tim",
+    "age" : 34
+}
+
+update.call(book, "AWS");
+
+update.call(employee, "Roger");
+
+update.apply(book, ["AWS"]);
+
+```
+
+HOF--> High Order Functions
+1) functions which can accept function as arguments
+2) functions which return a function
+--> treat function as first class member
+https://rxmarbles.com/
+
+Popular HOF: --> Code re-usability
+1) filter
+2) map
+3) reduce
+4) forEach
+5) limit
+6) skip
+
+
+
