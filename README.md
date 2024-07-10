@@ -360,3 +360,56 @@ Promise callback hell:
 
 
 6) Async and Await
+
+7) Generator
+
+function* doTask() {
+    task1;
+    task2;
+    yield 200;
+    task3;
+    yield "product list";
+    task4;
+    yield "order placed";
+    task5;
+    task6;
+}
+
+let process = doTask(); // reference to generator
+process.next(); // task1, task2, 200
+some logic
+process.next(); // task3 , "product list"
+logic
+process.next(); // task4, "order placed",
+process.next(); // remainig tasks
+
+8) template string
+
+var name = "Rajesh";
+
+var message = `
+        Welcome ${name},
+        to React Training.
+`;
+
+9) class type
+
+10) ESM --> Module system
+
+11) Proxy and Reflect
+
+var user = {
+    ..
+}
+
+var proxyUser = new Proxy(user, {});
+
+====
+
+Task:
+
+use [filter, map and reduce] of array not our functions and ES6 arrow functions
+
+double total = products.filter(... by mobile ...).map(product --> price).reduce( sum of prices);
+
+

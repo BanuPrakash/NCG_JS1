@@ -26,7 +26,11 @@
             console.log(values[0]);
             console.log(values[1]);
             console.timeEnd("one");
-        })
+        },
+         rej => console.log(rej))
+         .catch(ex => {
+            
+         })
     </script>
 </body>
 
