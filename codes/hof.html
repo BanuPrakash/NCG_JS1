@@ -19,7 +19,22 @@
             { "name": "OnePlus 15", "price": 120000.00, "category": "mobile" }
         ]
 
+        function isMobile(p) {
+            return p.category === 'mobile';
+        }
+
+        var mobiles = filter(products, isMobile);
+
+        forEach(mobiles, console.log);
+
         var data = [5, 1, 3, 9, 2, 7, 12];
+
+        var evens = filter(data, function(elem) {
+            return elem % 2 === 0
+        });
+
+        forEach(evens, console.log);
+
 
     </script>
 </body>
