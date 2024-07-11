@@ -1,6 +1,7 @@
 const path = require('path');
-
-module.exports = function(__env, args) {
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = function (__env, args) {
     // if(__env ==="production") ...   
     return {
         entry: './src/index.js',
@@ -22,6 +23,15 @@ module.exports = function(__env, args) {
         },
         resolve: {
             extensions: [".tsx", ".ts", ".jsx", ".js"]
-        }
+        },
+        devServer: {
+            port: 1234
+        },
+        plugins: [
+            new CleanWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                template: './public/index.html'
+            })
+        ]
     }
 }

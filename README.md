@@ -654,3 +654,5 @@ cacheable modules 533 KiB
   ./node_modules/lodash/lodash.js 531 KiB [built] [code generated]
 webpack 5.92.1 compiled successfully in 1130 ms
 ```
+
+npm i clean-webpack-plugin -D
