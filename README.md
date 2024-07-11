@@ -625,3 +625,32 @@ allows import JS file using ES6 Module system
 
 
 
+```
+npm run dev
+
+> webpack-react@1.0.0 dev
+> webpack --mode development
+
+asset bundle.07988c80.js 557 KiB [emitted] [immutable] (name: main)
+runtime modules 1.25 KiB 6 modules
+cacheable modules 533 KiB
+  ./src/index.js 715 bytes [built] [code generated]
+  ./src/lib.js 621 bytes [built] [code generated]
+  ./src/Person.js 258 bytes [built] [code generated]
+  ./node_modules/lodash/lodash.js 531 KiB [built] [code generated]
+webpack 5.92.1 compiled successfully in 131 ms
+banuprakash@Banuprakashs-MacBook-Pro webpack-react % 
+
+npm run prod
+
+> webpack-react@1.0.0 prod
+> webpack --mode production
+
+asset bundle.cf24f7ad.js 69.8 KiB [emitted] [immutable] [minimized] (name: main) 1 related asset
+orphan modules 879 bytes [orphan] 2 modules
+runtime modules 344 bytes 2 modules
+cacheable modules 533 KiB
+  ./src/index.js + 2 modules 1.56 KiB [built] [code generated]
+  ./node_modules/lodash/lodash.js 531 KiB [built] [code generated]
+webpack 5.92.1 compiled successfully in 1130 ms
+```
