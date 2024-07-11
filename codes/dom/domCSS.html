@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .completed {
+           text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="tasks">
+        <li>Car Wash</li>
+        <li>Coffee</li>
+        <li>Go to Bank</li>
+    </ul>
+
+    <script>
+        document.getElementById("tasks").addEventListener("click", evt => {
+           console.log(evt.target.classList)
+            evt.target.classList.toggle('completed')
+        });
+    </script>
+</body>
+
+</html>

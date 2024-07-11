@@ -464,13 +464,116 @@ const startEvent = new Event("start");
 const startEvent = new CustomEvent("start", {details: {...}});
 document.dispatchEvent(startEvent);
 
-<div id="result"></div>
+======
 
-document.getElementById("result").innerText = ...
-var regEx = /^\d+\.?\d*$/
-undefined
-regEx.test("45.44")
-true
-regEx.test("45sds")
+NodeJS
+open-source JavaScript runtime environment  / platform
+
+Why nodeJS?
+1) for building traditional web applications like Servlet/JSP, PHP, ASP.NET --> SSR
+2) for building RESTful / GraphQL APis
+3) for Streaming data 
+4) for client side web application development [ our usage]
+
+4.1)
+* unit testing
+* Integration testing
+* E2E testing
+
+4.2) compile or transcompile your code
+Target machine uses ES5 version of JS
+a) I write code in ES 2015+
+transpile / transcompiler 
+Babel / Tracuer
+Babel is a free and open-source JavaScript transcompiler that is mainly used to convert ECMAScript 2015+ code into backwards-compatible JavaScript code that can be run by older JavaScript engines.
+
+b) write code in DART / TypeScript / LiveScript / CoffeeScript
+
+c) Static code analysis --> Linting
+
+d) Uglify, minify and bundle
+
+function __f(e, a){for(i = 0;i<e.length;i++){a(e[i]);}}
 
 
+index.html
+<link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="styles.css">
+<script src="customer.js"></scripts>
+<script src="products.js"></scripts>
+<script src="orders.js"></scripts>
+<script src="payments.js"></scripts>
+
+
+JS automation tools:
+Grunt
+Gulp
+Webpack
+vite
+
+Grunt is a JavaScript task runner, a tool used to automatically perform frequent tasks such as minification, compilation, unit testing, and linting.
+
+nodeJs uses Package manager for installing dependencies, devDependency, peerDependencies, running scripts
+* NPM <<default>> 
+* yarn
+* PNPM
+* Rush
+
+npm init --y
+
+package.json -- > scripts, dependencies, devDependency, peerDependencies are configured
+
+pom.xml / build.gradle
+
+npm i lodash
+
+npm i jest -D
+
+
+Module System:
+1) IIFE
+
+```
+var shopModule = (function() {
+    var data = [];
+    function add() {
+
+    }
+    function validate() {
+
+    }
+
+    return {
+        data,
+        add
+    }
+})();
+
+
+var orderModule = (function() {
+    var data = [];
+    function add() {
+
+    }
+    function validate() {
+
+    }
+
+    return {
+        data,
+        add
+    }
+})();
+
+shopModule.data;
+
+```
+2) CommonJS module system --> default used by NodeJS
+module.exports and require
+
+3) ESM --> ES6 Module system
+
+export , import
+
+4) System
+5) AMD
