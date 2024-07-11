@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Value 1 <input type="text" id="v1" /> <br />
+    Value 2 <input type="text" id="v2" /> <br />
+    <input type="radio" name="compute" value="add"> Add <br />
+    <input type="radio" name="compute" value="subtract"> Subtract <br />
+    <button type="button" id="btn">Compute</button> <br />
+    Result : <span id="result"></span>
+
+    <script>
+        document.getElementById("v1").addEventListener("blur", isNumber);
+        document.getElementById("v2").addEventListener("blur", isNumber);
+
+        function isNumber(evt) {
+            var regEx = /^[0-9]+\.?[0-9]*$/
+            if (!regEx.test(evt.target.value)) {
+                evt.target.value = "";
+                evt.target.focus();
+            }
+        }
+
+        document.getElementById("btn").addEventListener("click", evt => {
+            var radios = document.querySelectorAll("input[name='compute']");
+            var computeTask = "";
+            for (i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    computeTask = radios[i].value;
+                }
+            }
+            if (computeTask === "add") {
+                document.getElementById("result").innerText = parseFloat(document.getElementById("v1").value) + parseFloat(document.getElementById("v2").value)
+            } else if (computeTask === "subtract") {
+                document.getElementById("result").innerText = parseFloat(document.getElementById("v1").value) - parseFloat(document.getElementById("v2").value)
+
+            }
+        })
+    </script>
+</body>
+
+</html>
