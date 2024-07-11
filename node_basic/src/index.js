@@ -1,5 +1,5 @@
 const {add, filter, forEach} = require('./lib');
-const Person = require('./Person');
+const {Person} = require('./Person');
 const {random} = require('lodash');
 
 var products = [

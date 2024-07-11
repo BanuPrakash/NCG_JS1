@@ -8,18 +8,11 @@ function forEach(elems, action) {
 // OCP to get subset
 function filter(elems, predicate) {
     var result = [];
-    // forEach(elems, function(elem) {
-    //     if(predicate(elem)) {
-    //         result.push(elem);
-    //     }
-    // })
-
     forEach(elems, elem => {
         if (predicate(elem)) {
             result.push(elem);
         }
     })
-
     return result;
 }
 
