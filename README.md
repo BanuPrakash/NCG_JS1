@@ -456,4 +456,21 @@ document.createTextNode
 4) traverse thro elements
 5) event handling
 
+DOM event handling
+
+events: click, keypress, move cursor, on load, unload ,....
+
+const startEvent = new Event("start");
+const startEvent = new CustomEvent("start", {details: {...}});
+document.dispatchEvent(startEvent);
+
+<div id="result"></div>
+
+document.getElementById("result").innerText = ...
+var regEx = /^\d+\.?\d*$/
+undefined
+regEx.test("45.44")
+true
+regEx.test("45sds")
+
 
