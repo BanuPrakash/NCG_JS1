@@ -406,10 +406,54 @@ var proxyUser = new Proxy(user, {});
 
 ====
 
+```
+optimization: {
+            runtimeChunk: 'single',
+            splitChunks: {
+                cacheGroups: {
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        chunks: 'all'
+                    }
+                }
+            }
+        }
+```
+
 Task:
 
 use [filter, map and reduce] of array not our functions and ES6 arrow functions
 
 double total = products.filter(... by mobile ...).map(product --> price).reduce( sum of prices);
+
+
+
+Recap:
+JS engine, event loop, WebAPi, Macrotask Queue and MicroTask Queue
+OOP, Functional Programming using HOF, Closure
+ES 6 features: let, const, destructuring, spread operators, template string, arrow functions, promise, async and await, generator
+Class, Module
+
+Day 2
+-----
+
+DOM Document Object Model is a programming interface [JS / Java / Visual Basic /... ] for documents [html / XML] to create tree of objects.
+
+Using DOM:
+1) access elements
+a) getElementById ==> single 
+b) getElementsByTagName ==> array
+c) querySelector [ using tag, classname, id, sub-selector] ==> uses CSS selector
+document.querySelector("input[name='age']")
+d) querySelectorAll() -==> array
+
+2) create elements
+factory method:
+document.createElement()
+document.createTextNode
+3) remove elements
+4) traverse thro elements
+5) event handling
 
 

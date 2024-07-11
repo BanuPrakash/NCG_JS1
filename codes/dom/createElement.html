@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th><th>Price</th><th>Category</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <script>
+         var products = [
+            { "name": "iPhone 15", "price": 98000.00, "category": "mobile" },
+            { "name": "Samsung Tv", "price": 278000.00, "category": "tv" },
+            { "name": "Wacom", "price": 45000.00, "category": "computer" },
+            { "name": "Logitech Mouse", "price": 800.00, "category": "computer" },
+            { "name": "OnePlus 15", "price": 120000.00, "category": "mobile" }
+        ]
+
+        var tbody = document.getElementById("tbody");
+        products.forEach(p => {
+            var tr = document.createElement("tr");
+
+            var td = document.createElement("td");
+            td.appendChild(document.createTextNode(p.name));
+
+            tr.appendChild(td);
+
+            td = document.createElement("td");
+            td.appendChild(document.createTextNode(p.price));
+
+            tr.appendChild(td);
+
+            td = document.createElement("td");
+            td.appendChild(document.createTextNode(p.category));
+
+            tr.appendChild(td);
+            tbody.appendChild(tr);
+        });
+    </script>
+</body>
+</html>
