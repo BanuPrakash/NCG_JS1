@@ -591,3 +591,37 @@ https://www.chaijs.com/
 function test() {
     console.log(arguments);
 }
+
+===========
+
+Webpack
+--> build tool
+
+Steps:
+1) npm init --y
+2) npm i webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/preset-react html-webpack-plugin css-loader style-loader webpack-dev-server -D
+
+loaders:
+1) css-loader allows css files to be imported in "JS"
+import "styles.css"
+
+style-loader
+<style>
+
+</style>
+
+2) file-loader can be used to load png
+import 'logo.png'
+
+3) babel-loader
+allows import JS file using ES6 Module system
+
+====
+
+@babel/core ==> transcompiler --> transpiler
+--> @babel/preset-env
+    syntax transform and polyfills
+     A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively 
+
+
+
