@@ -24,12 +24,33 @@ let p = new Person("Dia", 24);
 
 console.log(p.getName(), p.getAge());
 
-// XML
+let React = {
+    createElement: (tag, props, ...children) => {
+        var element = {tag, props: {...props, children}};
+        return element;
+    }
+}
+// XML, can be JSX
 let Book = <div className='card'>
     <h1 className='header'>React Complete Ref</h1>
-    <div className='body'>
+    <span className='body'>
         Rs. 1241.11
-    </div>
+    </span>
 </div>
 
 console.log(Book);
+
+function render(element, container) {
+    if(['string', 'number'].includes(typeof element)) {
+        container.appendChild(document.createTextNode(element));
+        return;
+    }
+    var domElement = document.createElement(element.tag);
+    if(element.props.children) {
+        element.props.children.forEach(child => render(child, domElement));
+    }
+    container.appendChild(domElement);
+
+    return domElement;
+}
+render(Book, document.getElementById("root"));

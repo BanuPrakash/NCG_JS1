@@ -658,3 +658,8 @@ webpack 5.92.1 compiled successfully in 1130 ms
 npm i clean-webpack-plugin -D
 
 Day 3
+
+
+JSX --> @babel/preset-react --> Vanilla JS object --> Presentation [Mobile, Web, Tv]
+
+https://github.com/chentsulin/awesome-react-renderer
