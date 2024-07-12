@@ -406,20 +406,6 @@ var proxyUser = new Proxy(user, {});
 
 ====
 
-```
-optimization: {
-            runtimeChunk: 'single',
-            splitChunks: {
-                cacheGroups: {
-                    vendor: {
-                        test: /[\\/]node_modules[\\/]/,
-                        name: 'vendors',
-                        chunks: 'all'
-                    }
-                }
-            }
-        }
-```
 
 Task:
 
@@ -427,6 +413,7 @@ use [filter, map and reduce] of array not our functions and ES6 arrow functions
 
 double total = products.filter(... by mobile ...).map(product --> price).reduce( sum of prices);
 
+https://webpack.js.org/plugins/split-chunks-plugin/
 
 
 Recap:
@@ -663,3 +650,89 @@ Day 3
 JSX --> @babel/preset-react --> Vanilla JS object --> Presentation [Mobile, Web, Tv]
 
 https://github.com/chentsulin/awesome-react-renderer
+
+
+REACTJS
+--------
+
+Rendering --> convert data to presentaion
+
+Server Side Rendering
+* Servlet + JSP + Thymeleaf
+* PHP
+* ASP.NET
+* ExpressJS --> JADE / PUG / EJS... 
+
+Client Side Rendering
+Evolution:
+1) DOM 
+2) jQuery
+document.createElement("table") --> $("<table>")
+document.getElementsByTagName("div") --> $("div")
+--> provided apis for AJAX calls 
+
+3) Templates [ combination of static and dynamic content]
+* jQueryTemplate
+* Handlebar
+* Mustache
+
+MVC --> Model View Controller architectural pattern 
+4) Framework and Libraries
+* Backbone library --> provided Model and Controller support
+* AngularJS Framework ==> Google
+digest and apply lifecycle 
+
+5) React --> View Library --> Facebook
+https://www.youtube.com/watch?v=8pDqJVdNa44
+
+6) Angular Framework
+7) Svelte
+
+========================================
+ng new nameofapp --> Angular
+
+npx create-react-app nameofapp --> react
+
+older versions
+npm i create-react-app -g 
+/users/AppData/Roaming/..
+create-react-app nameofapp
+
+---
+
+Creating React components:
+1) React.createElement()
+2) Class Component
+3) Functional Component [ 99.9 % of code] ==> returns JSX
+
+React Node is not an actual DOM element, they are potential DOM element
+
+============
+
+https://claudiopro.github.io/react-fiber-vs-stack-demo/
+
+
+Thinking in React:
+Atoms --> button, input, image
+Molecules --> Card
+Organism --> CardList
+Template
+Page
+
+https://react.dev/learn/thinking-in-react
+
+function add(x,y) {
+    return; 
+        x + y
+}
+
+console.log(add(4,1));
+
+
+https://legacy.reactjs.org/docs/reconciliation.html
+
+
+
+    
+
+

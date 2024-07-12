@@ -9,6 +9,7 @@ module.exports = function (__env, args) {
             path: path.resolve(__dirname, "dist"),
             filename: "bundle.[contenthash:8].js"
         },
+        devtool : 'cheap-module-source-map',
         module: {
             rules: [
                 {
@@ -27,6 +28,18 @@ module.exports = function (__env, args) {
         },
         devServer: {
             port: 1234
+        },
+        optimization: {
+            runtimeChunk: 'single',
+            splitChunks: {
+                cacheGroups: {
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        chunks: 'all'
+                    }
+                }
+            }
         },
         plugins: [
             new CleanWebpackPlugin(),
