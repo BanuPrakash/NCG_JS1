@@ -9,6 +9,7 @@ module.exports = function (__env, args) {
             path: path.resolve(__dirname, "dist"),
             filename: "bundle.[contenthash:8].js"
         },
+        target: ["web", "es5"],
         module: {
             rules: [
                 {
@@ -16,7 +17,7 @@ module.exports = function (__env, args) {
                     use: 'babel-loader'
                 },
                 {
-                    test: /^.css$/,
+                    test: /\.css$/i,
                     use: ["style-loader", "css-loader"]
                 }
             ]

@@ -1,7 +1,7 @@
 import forEach, {add, filter} from './lib'
 import Person from './Person' 
 import {random} from 'lodash'
-
+import "./styles.css"
 var products = [
     { "name": "iPhone 15", "price": 98000.00, "category": "mobile" },
     { "name": "Samsung Tv", "price": 278000.00, "category": "tv" },

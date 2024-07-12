@@ -656,3 +656,5 @@ webpack 5.92.1 compiled successfully in 1130 ms
 ```
 
 npm i clean-webpack-plugin -D
+
+Day 3
