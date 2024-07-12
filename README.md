@@ -731,6 +731,14 @@ console.log(add(4,1));
 
 https://legacy.reactjs.org/docs/reconciliation.html
 
+<Menu title="Delicious Recipes" recipes={recipes} />
+
+<Recipe ... />
+
+<Steps ... />
+
+
+
 
 
     
