@@ -24,3 +24,12 @@ let p = new Person("Dia", 24);
 
 console.log(p.getName(), p.getAge());
 
+// XML
+let Book = <div className='card'>
+    <h1 className='header'>React Complete Ref</h1>
+    <div className='body'>
+        Rs. 1241.11
+    </div>
+</div>
+
+console.log(Book);

@@ -9,12 +9,12 @@ module.exports = function (__env, args) {
             path: path.resolve(__dirname, "dist"),
             filename: "bundle.[contenthash:8].js"
         },
-        target: ["web", "es5"],
         module: {
             rules: [
                 {
-                    test: /^\.jsx?$/,
-                    use: 'babel-loader'
+                    test: /\.jsx?$/,
+                    use: 'babel-loader',
+                    exclude: /node_modules/
                 },
                 {
                     test: /\.css$/i,
