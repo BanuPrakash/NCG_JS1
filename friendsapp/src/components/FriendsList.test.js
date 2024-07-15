@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import FriendsList from './FriendsList';
 
@@ -23,6 +23,23 @@ describe("testing <FriendsList />", () => {
         expect(btns.length).toBe(5);
 
         let monicaTxt = screen.queryByText(/Monica/i);
+        expect(monicaTxt).not.toBeInTheDocument();
+    });
+
+    it("delete async friend", async () => {
+        render(<FriendsList />);
+        let btns = await screen.findAllByRole('button');
+        fireEvent.click(btns[3]);
+        btns = await screen.findAllByRole('button');
+        expect(btns.length).toBe(5);
+        waitFor(() => {
+            screen.getByText(/Monica/i),
+            {
+                timeout:3000
+            }
+        });
+        screen.debug();
+        let monicaTxt =  screen.queryByText(/Monica/i);
         expect(monicaTxt).not.toBeInTheDocument();
     });
 
