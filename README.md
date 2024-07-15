@@ -1086,6 +1086,35 @@ https://codepen.io/banuprakash/pen/oNrjbGw
 
 ===========
 
-Resume @ 4:30
+Testing --> same class or functional
+
+Hooks:
+1) useState
+2) useEffect
+3) useReducer
+action object 
+{
+    type:'typeofaction',
+    payload?:<<data>>
+}
+reducer function ==> takes (state, action) returns new state;
+dispatch --> to send action to reducer function.
+
+In mini-project to fake RESTApis
+use json-server to simulate Endpoints
+
+https://www.npmjs.com/package/json-server/v/0.17.3
+
+Task 1:
+Travese thro episodes of friends series
+
+npx json-server --watch friends.json --port 1234
+
+http://localhost:1234/episodes?number=3
+
+Task 2:
+Expense and Income List
+
+
 
 
