@@ -822,5 +822,7 @@ document.querySelector()
 ==========================
 
 
+npm test -- --coverage --watchAll 
+we added in package.json jest configuration
 
-
+coverage/lcov-report/index.html
