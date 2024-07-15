@@ -777,8 +777,50 @@ use keys instead of index for better performance
 
 ```
 
+Testing
+Unit Testing:
+Jasmine, Mocha and Jest
+jest-dom ->  assertions on state of a DOM
+React testing Library [RTL] is jest + jest-dom combination
+
+Angular Test Bed --> on top of Jasmine
+
+RTL fetching DOM elements
+* get
+* query
+* find
+
+Methods to access DOM elements:
+1) getByLabelText
+<label>Name</label>
+2) getByPlaceholderText
+<input type="text" 
+    placeholder="search by name" />
+getByPlaceholderText("search by name");
+
+3) getByText
+<h1>  Friends List  </h1>
+getByText(/Friends List/);
+
+4) getByAltText
+<img src="" alt="logo" >
+
+5) getByRole()
+to access form elements
+getByRole('button')
+getByRole('input')
+
+6) getByTestId ==> used rarely
 
 
+similarly for queryBy and findBy
     
+Note: we can still access DOM elements using document api like
+document.getElementById()
+document.querySelector() 
+
+==========================
+
+
 
 
