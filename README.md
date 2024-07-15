@@ -1056,4 +1056,36 @@ function Details({ user }) {
 ReactDOM.render(<UsersList />, document.getElementById("root"))
 ```
 
+3) useReducer use this hook instead of useState() if
+a) conditionally mutate the state
+b) state mutation depends on previous state
+
+{
+    cart: [],
+    total: <<number>>,
+    quantity: <<number>>
+}
+
+ACTION: ADD_TO_CART
+ACTION: REMOVE_FROM_CART
+ACTION: INCREMENT
+ACTION: CLEAR_CART
+
+Action Object is one of type:
+
+{
+    type: 'TYPE_OF_ACTION',
+    payload?: <<data>> 
+}
+
+reducer function is of type
+(state, action) => new_state
+
+
+https://codepen.io/banuprakash/pen/oNrjbGw
+
+===========
+
+Resume @ 4:30
+
 

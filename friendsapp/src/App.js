@@ -1,5 +1,6 @@
 import './App.css';
 import FriendsList from './components/FriendsList';
+import Sample from './dummy/Sample';
 import UsersList from './dummy/UsersList';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div className="App">
      <h1>Friends List</h1>
      {/* <FriendsList /> */}
-     <UsersList />
+     <Sample />
     </div>
   );
 }
