@@ -962,6 +962,24 @@ class AgeComponent extends React.Component {
 ReactDOM.render(<ParentComponent />, document.getElementById("root"));
 ```
 
+Upto React 16 version we used Class components if we had state and behaviour and 
+Functional Components for simple view component
+
+Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+React Hooks:
+1) useState() --> hook to introduce state members in functional component
+```
+function Counter() {
+  let [count, setCount] = React.useState(0);
+  return <div>
+      Count: {count} <br />
+    <button type="button" onClick={() => setCount(count+1)}>Increment</button>
+   </div>
+}
+
+ReactDOM.render(<Counter />, document.getElementById("root"));
+```
 
 
 
