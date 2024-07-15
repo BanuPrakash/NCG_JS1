@@ -731,13 +731,51 @@ console.log(add(4,1));
 
 https://legacy.reactjs.org/docs/reconciliation.html
 
-<Menu title="Delicious Recipes" recipes={recipes} />
+Day 4:
 
-<Recipe ... />
+Recap on React:
+```
+React nodes are not real DOM nodes, but a representation of a potential DOM node.
+This representation is considered the Virtual DOM.
 
-<Steps ... />
+ReactElement is an object with a type and props ==> React.createElement(); --> JSX
+{
+    type:"h1",
+    "props": {
+        props: ["className": "a", "src" : ""],
+        children: [...]
+    }
+}
 
+ReactNode can be ReactElement, array of ReactElements, string, number, null, undefined, boolean
 
+@babel/preset-react
+
+using React and ReactDOM library
+different ways of creating ReactElements 
+1) React.createElement()
+2) functional component ==> return JSX
+3) class component ==> render() returns JSX
+
+Render upto React 17 used Stack architecture, 18+ Fiber Architecture
+
+class component --> state and behaviour
+state = {
+
+}
+
+Reconiciliation ==> rendering the DOM when state/props changes
+
+VDOM --> copy of VDOM
+changes are done to VDOM copy
+Diff algorithm
+Render the new DOM
+VDOM copy becomes VDOM
+old VDOM is destroyed
+
+use keys instead of index for better performance
+
+```
 
 
 

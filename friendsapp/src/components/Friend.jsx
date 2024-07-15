@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+// Molecule
 export default class Friend extends Component {
     render() {
         let {id, firstName, lastName} = this.props.friend;
