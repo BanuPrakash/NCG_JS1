@@ -960,6 +960,7 @@ class AgeComponent extends React.Component {
 }
 
 ReactDOM.render(<ParentComponent />, document.getElementById("root"));
+https://codepen.io/banuprakash/pen/KKjddmo
 ```
 
 Upto React 16 version we used Class components if we had state and behaviour and 
@@ -969,6 +970,7 @@ Hooks are a new addition in React 16.8. They let you use state and other React f
 
 React Hooks:
 1) useState() --> hook to introduce state members in functional component
+https://codepen.io/banuprakash/pen/OJeyyBx?editors=1010
 ```
 function Counter() {
   let [count, setCount] = React.useState(0);
@@ -981,7 +983,77 @@ function Counter() {
 ReactDOM.render(<Counter />, document.getElementById("root"));
 ```
 
+2) useEffect() --> hook for simulate component life cycle methods
+https://codepen.io/banuprakash/pen/eYwppww
+```
+2.1) componentDidMount
+useEffect(() => {}, []) // called only once when component is loaded
 
+2.2) componentDidUpdate
+useEffect(() => {}); // get called whenever any state/props change
 
+2.3) 
+useEffect(() => {}, [age]); // get called only when age changes
+
+2.4)
+useEffect(() => {}, [age, name]); //gets called only when age or name changes 
+
+2.5) componentWillUnMount
+useEffect(() => {
+    // code
+    return () => {console.log("this is unmount")}
+}, [])
+
+Example:
+function UsersList() {
+  let [users, setUsers] = React.useState(null);
+  // same as ComponentDidMount
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => setUsers(data));
+  },[]);
+  
+  return <div>
+    <h1>Users List </h1>
+    {
+      users && users.map(user => <User user={user} key={user.id} />)   
+    }
+    </div>
+}
+
+function User(props) {
+  let {id, name, email} = props.user;
+  let [userId, setUserId] = React.useState(0);
+  let [user, setUser] = React.useState(null);
+  
+  // componentDidUpdate
+  React.useEffect(() => {
+      fetch('https://jsonplaceholder.typicode.com/users/' + userId)
+      .then(response => response.json())
+      .then(data => setUser(data));
+  }, [userId]);
+  
+  return <div onMouseMove={() => setUserId(id)}>
+      Name : {name} <br />
+      Email: {email} <br />
+      <Details user={user} />
+    </div>
+}
+
+function Details({ user }) {
+    return <div>
+        <h1> Details </h1>
+        {
+            user && <div>
+                Website: {user.website} <br />
+                Phone : {user.phone} <br />
+            </div>
+        }
+    </div>
+}
+
+ReactDOM.render(<UsersList />, document.getElementById("root"))
+```
 
 
