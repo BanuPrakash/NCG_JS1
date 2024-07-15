@@ -848,5 +848,40 @@ package.json
 
  npm run e2e
 
- 
+ =========================
+
+ Component Life Cycle methods
+
+```
+ Mounting Phase:
+ constructor() ==> render() ==> componentDidMount()
+
+  constructor()  ==> initialization ==> empty 20 videos ==> empty rectangles are displayed
+
+  render() ==> view is generated
+  componentDidMount() ==> Make API calls --> RESTful or GraphQL endpoints
+
+
+if constructor() has API call --> render() is waiting for API call to finish
+--> Blank Screen --> FCP issue
+
+Updating Phase:
+Prior:  componentDidMount() --> would have updated the state
+
+state changes ==> render() ==> view with actual content
+
+
+shouldComponentUpdate() -> render() -> componentDidUpdate()
+
+componentDidUpdate() --> here make API calls based on dependend data
+
+
+UnMounting Phase:
+componentWillUnMount(); --> before unmounting
+* unsubscribe the subscription
+Component subscribes for Stock update service
+* dispay Do you want to really delete / close , Thanks for Using popup ...
+
+```
+
 
