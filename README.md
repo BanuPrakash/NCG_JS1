@@ -826,3 +826,12 @@ npm test -- --coverage --watchAll
 we added in package.json jest configuration
 
 coverage/lcov-report/index.html
+
+FriendsList.test.js ==> Integration Test and not unit testing
+
+<FriendsList /> ==> renders <Search /> and <Friend />
+
+Unit Testing ==> Mock dependency
+
+
+
