@@ -833,5 +833,19 @@ FriendsList.test.js ==> Integration Test and not unit testing
 
 Unit Testing ==> Mock dependency
 
+========================
 
+E2E Testing
+cypress / protractor / puppetter / Selenium
 
+==> we need server to be running
+
+npm i cypress -D
+
+package.json
+
+ "e2e": "cypress open"
+
+ npm run e2e
+
+ 
