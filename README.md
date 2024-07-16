@@ -1227,8 +1227,13 @@ Single Page Application [ SPA ] and RWD [ Responsive Web Design ]
 
 npx create-react-app shopapp
 
-npm bootstrap react-bootstrap react-router-dom @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+npm i bootstrap react-bootstrap react-router-dom @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons axios
 
+
+fetch --> part of browser
+axios --> better for sending HTTP headers and CRUD operations
+
+<img  src="" className="col-lg-3 col-md-6 col-sm-12" />
 
 
 
