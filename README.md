@@ -1115,6 +1115,84 @@ http://localhost:1234/episodes?number=3
 Task 2:
 Expense and Income List
 
+===
+
+Day 5:
+
+Unit Testing React Components --> jest-dom -> RTL
+get* query* find*
+
+E2E --> Cypress
+
+componentDidMount()
+shouldComponentUpdate()
+componentDidUpdate()
+componentWillUnMount()
+
+React hooks: 16.8 version
+1) useState()
+2) useEffect()
+3) useReducer()
+
+shouldComponentUpdate() ---> memo() for Functional Component
+
+function memo(Component) {
+    var cacheProps = {};
+    new props compare with cacheProps;
+    if same return;
+    else return Component(props);
+}
+
+Code:
+```
+class ParentComponent extends  React.Component {
+  state = {
+    name : "Roger",
+    age : 34
+  }
+  changeAge() {
+    this.setState( {
+      age: this.state.age + 1
+    })
+  }
+  changeName() {
+    this.setState( {
+      name: this.state.name + "..."
+    })
+  }
+  render() {
+    console.log("Parent renders")
+    return <div>
+        <MemoNameComponent name = {this.state.name} /> <br />
+        <MemoAgeComponent age = {this.state.age} /> <br />
+        <button type="button" onClick={() => this.changeAge()}>Change Age </button> 
+        <button type="button" onClick={() => this.changeName()}>Change Name </button> 
+     </div>
+  }
+}
+
+function NameComponent(props) {
+    console.log("NameComponent renders...");
+    return <div>
+        Name : {props.name}
+    </div>
+}
+
+const MemoNameComponent = React.memo(NameComponent);
+
+function AgeComponent(props) {
+    console.log("AgeComponent renders...")
+    return <div>
+        Age : {props.age}
+    </div>
+}
+
+const MemoAgeComponent = React.memo(AgeComponent);
+
+ReactDOM.render(<ParentComponent />, document.getElementById("root"));
+```
+
+
 
 
 
