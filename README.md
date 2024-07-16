@@ -1192,6 +1192,45 @@ const MemoAgeComponent = React.memo(AgeComponent);
 ReactDOM.render(<ParentComponent />, document.getElementById("root"));
 ```
 
+React Context: Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+Provider: place data on to the Context
+Consumer: get data from Context
+
+Single Page Application [ SPA ] and RWD [ Responsive Web Design ]
+* React Context
+* React Router DOM
+    -> Different URL --> Different View has to be rendered
+    http://localhost:3000/products
+    http://localhost:3000/cart
+    http://localhost:3000/wishlist
+    http://localhost:3000/login
+    http://localhost:3000/details/4
+
+    --> Lazy loading of components
+* bootstrap CSS Framework 
+    <div className="card"> </div>
+* react-bootstrap --> React Spectrum and React Web Components
+    <Card> </Card>
+* fontawesome --> Icons
+* React hooks
+
+* ProductList 
+* ProductCard 
+* Details 
+* CartComponent 
+* CartList 
+* ProductForm 
+* Default
+
+=====
+
+npx create-react-app shopapp
+
+npm bootstrap react-bootstrap react-router-dom @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+
+
+
 
 
 
