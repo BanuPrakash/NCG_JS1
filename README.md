@@ -1246,3 +1246,6 @@ npx json-server --watch data.json --port 9999
 
 
 
+npm i @adobe/react-spectrum
+
+npm i @swc-react/card
