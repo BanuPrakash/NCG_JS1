@@ -1236,7 +1236,18 @@ axios --> better for sending HTTP headers and CRUD operations
 <img  src="" className="col-lg-3 col-md-6 col-sm-12" />
 
 
+ <CartProvider>
+            <A />
+ </CartProvider>
 
+  <CartProvider>
+            <B />
+            <C />
+ </CartProvider>
+
+  <CartProvider>
+            <D />
+ </CartProvider>
 
 
 
