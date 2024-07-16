@@ -1235,19 +1235,14 @@ axios --> better for sending HTTP headers and CRUD operations
 
 <img  src="" className="col-lg-3 col-md-6 col-sm-12" />
 
+{
+    "customer": "banu@gmail.com",
+    "orderDate": ...
+    "items": []
+    "total": 
+}
 
- <CartProvider>
-            <A />
- </CartProvider>
-
-  <CartProvider>
-            <B />
-            <C />
- </CartProvider>
-
-  <CartProvider>
-            <D />
- </CartProvider>
+npx json-server --watch data.json --port 9999
 
 
 
