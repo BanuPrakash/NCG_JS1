@@ -1360,3 +1360,59 @@ function App() {
 }
 
 ```
+
+State Management:
+* Context --> not adviced for bigger application --> Antipattern
+
+Predicatable State Managment:
+Flux Architecture --> uni directional data flow
+* Redux
+* mobx
+* MST
+* ObservaleRX
+* Recoil
+
+MVC pattern vs Flux Pattern
+
+```
+
+connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
+
+
+{
+    "cart": {
+        items: [...],
+        total: ..
+        qty: ...
+    },
+    "profile": {
+        avatar: "mypic.png",
+        name : "banu@gmail.com"
+    }
+}
+
+
+function mapStateToProps(state) {
+    return {
+        "cartItems": state.cart.items,
+        "grandTotal": state.cart.total
+        ...
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        addToCart: (item) => dispatch({type:'ADD_TO_CART', payload: item}),
+        clearCart: () => dispatch({type:'CLEAR_CART'})
+    }
+}
+
+
+props.cartItems
+
+props.addToCart(item);
+
+```
