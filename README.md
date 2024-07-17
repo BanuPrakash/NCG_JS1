@@ -1249,3 +1249,114 @@ npx json-server --watch data.json --port 9999
 npm i @adobe/react-spectrum
 
 npm i @swc-react/card
+
+=============================
+
+Day 6
+
+Recap:
+* React-Router-DOM
+BrowserRouter, Routes, Route, Link
+useNavigate() 
+useParams() to read PathParameter
+http://localhost:3000/products/3
+http://localhost:3000/details/2
+
+useSearchParams() for Query parameters
+http://localhost:3000/products?page=3&size=10
+
+* Reducer functions ==> (state, action) => new_state
+
+useReducer() hook to connect to Reducer function
+
+let [state, dispatch] = useReducer(reducerFn, intialState);
+
+
+dispatch --> to send actions to reducer function
+
+cyclomatic complexity
+
+
+* Context
+Provider
+Consumer
+
+```
+const BaseContext = createContext();
+
+public function SampleComponent() {
+    state = {
+        x: 100,
+        y: 200
+    }
+
+    return <BaseContext.Provider value={{dataX : x, dataY: y}}>
+            <A />
+        </BaseContext.Provider>
+}
+
+function A() {
+    return <BaseContext.Consumer>
+            {
+                value => {
+                    return <div>
+                            x : {value.dataX}
+                            y: {value.dataY}
+                    </div>
+                }
+            }
+    <BaseContext.Consumer>
+}
+
+OR
+function A() {
+    let {dataX, dataY} = useContext(BaseContext);
+    return <div>
+            x: {dataX}
+            y: {dataY}
+    </div>
+```
+
+
+react-bootstrap --> can be replaced by --> Adobe React Spectrum
+
+https://react-spectrum.adobe.com/react-spectrum/
+
+=============
+
+React Forms:
+* Controlled Components
+--> React holds the state of form elements at any given point of type
+```
+function App() {
+    let [name, setName] = useState("");
+    let [age, setAge] = useState(0);
+
+    return <div>
+            Name <input type="text" onChange={(evt) => setName(evt.target.value)}> <br />
+            Age <input type="number" onChange={(evt) => setAge(+evt.target.value)}> <br />
+    </div>
+}
+```
+* Uncontrolled Components
+--> form elements hold the state
+
+```
+    function App() {
+        let nameRef = useRef();
+        let ageRef = useRef();
+        function doSubmit() {
+            let user = {
+                name: nameRef.current.value,
+                age : ageRef.current.value
+            }
+            ///
+        }
+    return <div>
+            Name <input type="text" ref={nameRef} /><br />
+            Age <input type="number" ref={ageRef} /> <br />
+            <button type="submit" onClick={doSubmit}>Submit</button>
+    </div>
+}
+
+```

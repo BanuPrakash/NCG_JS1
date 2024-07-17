@@ -3,9 +3,27 @@ import { defaultTheme, Provider, Grid, View } from '@adobe/react-spectrum';
 import { Card } from '@swc-react/card';
 
 export default function ProductForm() {
+  let [name, setName] = React.useState('');
+
+  let onSubmit = (e) => {
+    e.preventDefault();
+
+    // Submit data to your backend API...
+    alert(name);
+  };
   return (
     <Provider theme={defaultTheme}>
-      <Grid
+      <Form onSubmit={onSubmit} maxWidth="size-3000">
+        <TextField label="Name" value={name} onChange={setName} />
+        <div>You entered: {name}</div>
+        <ButtonGroup>
+          <Button type="submit" variant="primary">Submit</Button>
+          <Button type="reset" variant="secondary">Reset</Button>
+        </ButtonGroup>
+      </Form>
+    </Provider>
+  );
+  {/* <Grid
         areas={[
           'header  header',
           'sidebar content',
@@ -28,7 +46,7 @@ export default function ProductForm() {
           </Card>
         </View>
         <View backgroundColor="magenta-600" gridArea="footer" />
-      </Grid>
-    </Provider>
+      </Grid> */}
+   
   )
 }
