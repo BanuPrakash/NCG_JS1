@@ -1432,3 +1432,19 @@ remove Context references
 2) remove CartPovider in index.js
 3) CartComponent, CartList
 4) ProductCard, NavbarComponent
+
+npm i @reduxjs/toolkit react-redux
+
+createSlice:
+As createSlice creates your actions as well as your reducer for you, you don't have to worry about type safety here. Action types can just be provided inline:
+
+const slice = createSlice({
+  name: 'test',
+  initialState: 0,
+  reducers: {
+    increment: (state, action) => state + action.payload,
+    decrement: (state, action) => state -1 ,
+    reset: (state) => 0,
+  },
+})
+
