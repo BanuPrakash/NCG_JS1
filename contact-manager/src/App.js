@@ -25,10 +25,10 @@ function App(props) {
       }
 
       <form>
-        <button type="button" onClick={() => clearAllContacts()}>Clear</button> <br />
+        <button type="button" onClick={() => clearAllContacts()} >Clear</button> <br />
         Email : <input type="email" ref={emailRef} /> <br />
         Name : <input type="text" ref={nameRef} /> <br />
-        <button onClick={() => addNewContact()}>Add Contact</button>
+        <button onClick={() => addNewContact()} type='button'>Add Contact</button>
       </form>
     </div>
   );
@@ -36,8 +36,8 @@ function App(props) {
 
 function ContactView(props) {
   return <div>
-    {props.email}, {props.name}
-    <button onClick={() => props.removeContact(props.email)}>Delete</button>
+    {props.contact.email}, {props.contact.name}
+    <button onClick={() => props.removeContact(props.contact.email)}>Delete</button>
   </div>
 }
 

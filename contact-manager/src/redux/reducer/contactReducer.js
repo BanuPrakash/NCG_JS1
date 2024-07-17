@@ -1,5 +1,5 @@
 export default function contactReducer(state = [], action) {
-    switch(action.type) {
+    switch (action.type) {
         case 'ADD_CONTACT':
             return [...state, action.payload];
         case 'REMOVE_CONTACT':
@@ -7,6 +7,6 @@ export default function contactReducer(state = [], action) {
         case 'CLEAR_CONTACTS':
             return [];
         default:
-            return state;   
+            return state;
     }
 }
