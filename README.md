@@ -1420,3 +1420,10 @@ npx create-react-app contact-manager
 
 cd contact-mangager
 contact-mangager> npm i redux react-redux
+
+==============
+
+Redux Toolkit: The official, opinionated, batteries-included toolset for efficient Redux development
+
+shopapp --> convert Context usage to RTK
+
