@@ -11,9 +11,9 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            state.items.push(...action.payload);
+            state.items.push(action.payload);
             state.total = state.total + action.payload.amount
-            state.quantity = quantity + 1
+            state.quantity = state.quantity + 1
         },
         increment: (state, action) => {
             state.items.forEach(item => {
@@ -25,9 +25,9 @@ const cartSlice = createSlice({
             state.total = state.items.map(item => item.amount).reduce((v1, v2) => v1 + v2, 0.0);
         },
         clearCart: (state) => {
-            state.items = [],
-                state.total = 0,
-                state.quantity = 0
+            state.items = [];
+            state.total = 0;
+            state.quantity = 0;
         },
     },
 });

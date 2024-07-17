@@ -1448,3 +1448,7 @@ const slice = createSlice({
   },
 })
 
+
+useSelector ==> mapStateToProps
+useDispatch ==> mapDispatchToProps
+
