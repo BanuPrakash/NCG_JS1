@@ -1,12 +1,23 @@
 import { connect } from 'react-redux';
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-
+      {
+        props.contactlist.map(contact => <ContactView 
+          removeContact={props.removeContact} 
+          contact={contact} key={contact.email}/>)
+      }
     </div>
   );
+}
+
+function ContactView(props) {
+  return <div>
+    {props.email}, {props.name} 
+    <button onClick={() => props.removeContact(props.email)}>Delete</button>
+  </div>
 }
 
 export default connect(
