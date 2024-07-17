@@ -1416,3 +1416,7 @@ props.cartItems
 props.addToCart(item);
 
 ```
+npx create-react-app contact-manager
+
+cd contact-mangager
+contact-mangager> npm i redux react-redux
