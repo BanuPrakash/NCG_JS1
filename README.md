@@ -1427,3 +1427,8 @@ Redux Toolkit: The official, opinionated, batteries-included toolset for efficie
 
 shopapp --> convert Context usage to RTK
 
+remove Context references
+1) delete context and reducer folders
+2) remove CartPovider in index.js
+3) CartComponent, CartList
+4) ProductCard, NavbarComponent
